@@ -1,24 +1,44 @@
 const output = document.querySelector("#output");
+const input = document.querySelector("#input");
+let search_btn = document.querySelector("#search-btn");
+const show_more = document.querySelector("#show-more");
 
-async function fetchData() {
+window.addEventListener("load", async () => {
+  output.innerHTML = "";
+  let ld = await fetchData();
+  let five = ld.splice(0, 5);
+
+  show(five);
+});
+
+async function fetchData(query = "apple") {
   const response = await fetch(
-    "https://openapi.programming-hero.com/api/phones?limit=5&search=apple"
+    `https://openapi.programming-hero.com/api/phones?search=${query}`
   );
-  // const response = await fetch(
-  //   "https://openapi.programming-hero.com/api/phones?search=oppo"
-  // );
   const result = await response.json();
   const data = await result.data;
   console.log(data);
   show(data);
+  return data;
 }
 
-fetchData();
+// fetchData();
+
+//  function to take search query and give that to fetchdata
+
+search_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  let input = document.querySelector("#input");
+  fetchData(`${input.value}`);
+  input.value = "";
+});
+
+// function to show data,
 
 function show(data) {
   output.innerText = "";
-  data.forEach((element) => {
-    console.log(data);
+  data.forEach((element, index) => {
+    // console.log(data);
 
     const parent = document.createElement("div");
     parent.classList.add("parent");
@@ -38,6 +58,10 @@ function show(data) {
     const button = document.createElement("button");
     button.classList.add("button-show");
     button.innerText = "Show Details";
+
+    button.addEventListener("click", () => {
+      console.log(index);
+    });
 
     parent.append(image, title, description, button);
     output.append(parent);
