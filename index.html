@@ -41,11 +41,11 @@
       <div class="relative border">
         <div
           id="iphone-images"
-          class="flex gap-6 justify-center items-center absolute md:left-26 md:-top-44 sm:-top-5 w-screen"
+          class="flex md:gap-6 sm:gap-4 justify-center items-center absolute md:left-26 md:-top-44 sm:-top-2 -top-20 left-18 w-screen"
         >
-          <img src="mobile.png" class="md:h-80 sm:h-40 h-80" alt="" />
-          <img src="mobile large.png" class="md:h-auto sm:h-56" alt="" />
-          <img src="mobile.png" class="h-80 md:h-80 sm:h-40" alt="" />
+          <img src="mobile.png" class="md:h-80 sm:h-52 h-36" alt="" />
+          <img src="mobile large.png" class="md:h-auto sm:h-64 h-56" alt="" />
+          <img src="mobile.png" class="md:h-80 sm:h-52 h-36" alt="" />
         </div>
       </div>
       <!-- phone images div with phone absolute position -->
@@ -59,7 +59,7 @@
 
       <!-- Mobile search input and button -->
 
-      <div class="search flex justify-center mb-10 pt-5">
+      <div class="search flex justify-center mb-10 pt-5 w-screen">
         <input
           type="text"
           class="input-text border w-60 px-4"
@@ -68,7 +68,7 @@
         />
         <button
           id="search-btn"
-          class="search-btn px-6 py-2 rounded-md text-white font-medium ml-2 bg-purple-800 cursor-pointer"
+          class="search-btn px-3 md:px-6 md:py-2 py-1 rounded-md text-white font-medium ml-2 bg-purple-800 cursor-pointer"
         >
           Search
         </button>
@@ -96,7 +96,10 @@
 
       <!-- Div for footer -->
 
-      <div id="footer" class="footer w-full pb-32 pt-32 bg-[#F2F8FF]">
+      <div
+        id="footer"
+        class="footer w-screen pb:16 md:pb-32 md:pt-32 pt-16 text-center bg-[#F2F8FF]"
+      >
         <div class="footer-box flex justify-center items-center flex-col">
           <p class="font-bold text-lg my-1">Hot Gadgets BD</p>
           <p class="font-bold text-lg">
