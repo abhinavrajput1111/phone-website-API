@@ -8,8 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div id="wrapper" class="wrapper">
-      <div id="upper-box" class="w-full bg-[#F2F8FF] pb-60">
+    <div id="wrapper" class="wrapper w-screen">
+      <div id="upper-box" class="w-screen bg-[#F2F8FF] pb-60">
         <section id="navbar" class="navbar d-flex">
           <h2 class="logo">Hot Gadgets</h2>
           <button class="signup bg-violet-800 mr-14">SIGN UP</button>
@@ -41,11 +41,11 @@
       <div class="relative border">
         <div
           id="iphone-images"
-          class="flex gap-6 justify-center items-center absolute left-44 -top-44"
+          class="flex gap-6 justify-center items-center absolute md:left-26 md:-top-44 sm:-top-5 w-screen"
         >
-          <img src="mobile.png" class="h-80" alt="" />
-          <img src="mobile large.png" class="" alt="" />
-          <img src="mobile.png" class="h-80" alt="" />
+          <img src="mobile.png" class="md:h-80 sm:h-40 h-80" alt="" />
+          <img src="mobile large.png" class="md:h-auto sm:h-56" alt="" />
+          <img src="mobile.png" class="h-80 md:h-80 sm:h-40" alt="" />
         </div>
       </div>
       <!-- phone images div with phone absolute position -->
@@ -78,7 +78,7 @@
 
       <!-- Div for output -->
 
-      <div class="output-box border-2 border-red-700">
+      <div class="output-box">
         <div id="output" class="output w-full pb-20"></div>
         <!-- <button
           id="show-more"

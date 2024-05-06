@@ -18,7 +18,7 @@ async function fetchData(query = "apple") {
   const result = await response.json();
   const data = await result.data;
   console.log(data);
-  show(data);
+  // show(data);
   return data;
 }
 
@@ -26,11 +26,31 @@ async function fetchData(query = "apple") {
 
 //  function to take search query and give that to fetchdata
 
-search_btn.addEventListener("click", (e) => {
+search_btn.addEventListener("click", async (e) => {
   e.preventDefault();
   let input = document.querySelector("#input");
-  fetchData(`${input.value}`);
-  input.value = "";
+  let data = await fetchData(`${input.value}`);
+  // input.value = "";
+  // console.log(data);
+  let slicedData = data.slice(0, 6);
+  console.log(slicedData);
+  show(slicedData);
+
+  const loadMore = document.createElement("button");
+  loadMore.innerText = "Load More";
+  loadMore.classList.add("load-more");
+  output.append(loadMore);
+
+  // event on loadMore button
+
+  loadMore.addEventListener("click", async (e) => {
+    let input = document.querySelector("#input");
+
+    let data = await fetchData(`${input.value}`);
+    show(data);
+
+    input.value = "";
+  });
 });
 
 // function to show data,

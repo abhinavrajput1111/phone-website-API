@@ -79,5 +79,10 @@
   margin-right: auto;
 }
 
-.show-more {
+.load-more {
+  background-color: blueviolet;
+  padding: 0.8rem 1.2rem;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
 }
